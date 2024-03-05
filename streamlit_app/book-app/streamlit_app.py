@@ -3,10 +3,12 @@ import os
 import requests
 import streamlit as st
 from streamlit_chat import message
+import os
 
 
 class BookStreamlitApp:
-    URL = "http://books.api.jlbdatasci.com:5600/generate"
+    site = os.getenv("URL")
+    URL = f"http://{site}:5600/generate"
 
     def __init__(self):
         self.build_app()
